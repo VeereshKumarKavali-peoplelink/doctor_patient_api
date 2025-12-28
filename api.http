@@ -119,4 +119,12 @@ DELETE {{baseUrl}}/api/patient/6951397d210e49b1e7cb20fd
 Accept: application/json
 Authorization: Bearer {{jwtToken}}
 
+###
+
+
+### Get All Doctors & Patients
+GET {{baseUrl}}/api/doctor/patient
+Accept: application/json
+
+###
 

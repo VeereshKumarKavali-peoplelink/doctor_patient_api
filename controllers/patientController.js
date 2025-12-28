@@ -3,6 +3,7 @@ const dbQueries = require("../dbQueries");
 const { success, failure } = require("../utils/response");
 const errors = require("../utils/error.js");
 
+//Create Patient
 const createPatientAPI = async (request, response) => {
     const { name, age, gender, weightInKgs, healthIssue, phoneNumber } = request.body;
     try {
@@ -21,6 +22,7 @@ const createPatientAPI = async (request, response) => {
     }
 };
 
+//Get All Patients (with Pagination)
 const getAllPatientsAPI = async (request, response) => {
     const { page = 1, limit = 10 } = request.query;
     const skip = (page - 1) * limit;
@@ -37,6 +39,7 @@ const getAllPatientsAPI = async (request, response) => {
     }
 };
 
+//Update a Patient
 const updatePatientAPI = async (request, response) => {
     const { patientId } = request.params;
     const { name, age, gender, weightInKgs, healthIssue, phoneNumber } = request.body;
@@ -52,6 +55,7 @@ const updatePatientAPI = async (request, response) => {
     }
 };
 
+//Delete a Patient
 const deletePatientAPI = async (request, response) => {
    const { patientId } = request.params;
     try {

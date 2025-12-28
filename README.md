@@ -63,6 +63,8 @@ PUT http://localhost:3000/api/doctor/:doctorId
 
 DELETE http://localhost:3000/api/doctor/:doctorId
 
+GET http://localhost:3000/api/doctor/patient
+
 POST http://localhost:3000/api/patient
 
 GET http://localhost:3000/api/patient?page=1&limit=10
