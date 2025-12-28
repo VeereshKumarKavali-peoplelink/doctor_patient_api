@@ -1,0 +1,122 @@
+@baseUrl=http://localhost:3000
+@jwtToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5NTEzNzI4OWJkNjg0NGJkYjgwNDIzNiIsImVtYWlsIjoidmVlcmVzaEBnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NjY5MzAzMjYsImV4cCI6MTc2NjkzMzkyNn0.JeRXw-wMywJflFUD038zy64oIi1Dty8IxrIukQBBCQw
+
+### Register User
+POST {{baseUrl}}/api/user/register
+Accept: application/json
+Content-Type: application/json
+
+{
+  "name": "Veeresh",
+  "email": "veeresh@gmail.com",
+  "password": "Veeresh@12345"
+}
+
+###
+
+### Login User
+POST {{baseUrl}}/api/user/login
+Accept: application/json
+Content-Type: application/json
+
+{
+  "email": "veeresh@gmail.com",
+  "password": "Veeresh@12345"
+}
+
+###
+
+### Create Doctor
+POST {{baseUrl}}/api/doctor
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer {{jwtToken}}
+
+{
+  "name": "Dr. Lochan Kumar",
+  "specialization": "Cardiology",
+  "experienceInYears": 12,
+  "phoneNumber": "9876543210",
+  "email": "ravi.kumar@cityhospital.com"
+}
+
+
+###
+
+### Get All Doctors (Pagination)
+GET {{baseUrl}}/api/doctor?page=1&limit=10
+Accept: application/json
+
+###
+
+
+### Update a Doctor details
+PUT {{baseUrl}}/api/doctor/695138309bd6844bdb804239
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer {{jwtToken}}
+
+{
+  "name": "Dr. Anjali Sharma",
+  "specialization": "Dermatology",
+  "experienceInYears": 8,
+  "phoneNumber": "9123456789",
+  "email": "anjali.sharma@skinhub.in"
+}
+
+###
+
+### Delete a Doctor
+DELETE {{baseUrl}}/api/doctor/695138309bd6844bdb804239
+Accept: application/json
+Authorization: Bearer {{jwtToken}}
+
+###
+
+### Create Patient
+POST {{baseUrl}}/api/patient
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer {{jwtToken}}
+
+{
+  "name": "Rahul Verma",
+  "age": 34,
+  "gender": "male",
+  "weightInKgs": 72,
+  "healthIssue": "High fever and body pain",
+  "phoneNumber": "9876543211"
+}
+
+###
+
+### Get All Patients (Pagination)
+GET {{baseUrl}}/api/patient?page=1&limit=10
+Accept: application/json
+
+###
+
+
+### Update a Patient details
+PUT {{baseUrl}}/api/patient/6951397d210e49b1e7cb20fd
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer {{jwtToken}}
+
+{
+    "name": "Meena",
+    "age": 45,
+    "gender": "female",
+    "weightInKgs": 65,
+    "healthIssue": "Low Blood Pressure",
+    "phoneNumber": "9090909033"
+  }
+
+###
+
+### Delete a Patient
+DELETE {{baseUrl}}/api/patient/6951397d210e49b1e7cb20fd
+Accept: application/json
+Authorization: Bearer {{jwtToken}}
+
+
